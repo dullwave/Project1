@@ -1,7 +1,6 @@
 class LocationsController < ApplicationController
   def index
     @locations = Location.all
-    @location = Location.each(:city)
   end
   def new
     @location = Location.new

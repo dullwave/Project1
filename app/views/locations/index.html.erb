@@ -1,5 +1,4 @@
 <h1>Saved Locations</h1>
-<% @locations.each do |location| %>
 <% form_for @location do |f| %>
   <%= f.collection_select :id, Location.all, :city, {:include_blank => 'Select'} %>
   <%= f.submit 'Submit' %>
