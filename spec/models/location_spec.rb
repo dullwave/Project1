@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Location do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'valid location' do
+    let(:location) { Location.create }
+    subject { location }
+    it { should has_many(:projects) }
+  end
 end
