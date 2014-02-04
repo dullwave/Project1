@@ -21,10 +21,10 @@ class Location < ActiveRecord::Base
     # Outside can be accessed by loc = Location(10, 10)
     #                            loc[:max_y]
     {
-      max_x: latitude + distance,
-      max_y: longitude + distance,
-      min_x: latitude - distance,
-      min_y: longitude - distance
+      max_x: longitude + distance,
+      max_y: latitude + distance,
+      min_x: longitude - distance,
+      min_y: latitude - distance
     }
   end
 end
