@@ -1,0 +1,9 @@
+<h1>Enter Your Location.</h1>
+
+<%= form_for @location do |f| %>
+  <%= f.text_field :address, placeholder: 'Street Address' %>
+  <%= f.text_field :city, placeholder: 'City' %>
+  <%= f.text_field :state, placeholder: "State (Ex. 'MA')" %>
+  <%= f.text_field :zip, placeholder: 'Zip' %>
+  <%= f.submit %>
+<% end %>

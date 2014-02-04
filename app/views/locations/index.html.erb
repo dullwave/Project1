@@ -1,0 +1,7 @@
+<h1>Saved Locations</h1>
+<% @locations.each do |location| %>
+<% form_for @location do |f| %>
+  <%= f.collection_select :id, Location.all, :city, {:include_blank => 'Select'} %>
+  <%= f.submit 'Submit' %>
+  <p>Or, <%= link_to 'enter a new location',  new_location_path %>.</p>
+<% end %>
