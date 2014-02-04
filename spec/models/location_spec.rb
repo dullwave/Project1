@@ -7,6 +7,12 @@ describe Location do
     it { should have_many(:projects) }
   end
 
+  describe '#full_address' do
+    it 'should make a composite address by combining user input values' do
+      Location.full_address('501 Longley Rd', 'Groton', 'MA', '01450').should eq("501 Longley Rd, Groton, MA, 01450")
+    end
+  end
+
   describe '.box_coordinates' do
     it 'should return a box of nearby coordinates' do
       Location.box_coordinates(40, 20).should eq({max_x: 20.3, max_y: 40.3, min_x: 19.7, min_y: 39.7})

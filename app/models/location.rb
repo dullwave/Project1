@@ -15,6 +15,12 @@
 
 class Location < ActiveRecord::Base
   has_many :projects
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def self.full_address(address, city, state, zip)
+    [address, city, state, zip].compact.join(', ')
+  end
 
   def self.box_coordinates(latitude, longitude, distance=0.3)
     # Return hash of coordinates
