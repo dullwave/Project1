@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(loc_params)
     if @location.save
-      redirect_to location_projects_path
+      redirect_to @location
     else
       render :new
     end

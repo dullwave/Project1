@@ -3,7 +3,7 @@ Project1::Application.routes.draw do
   resources :users
 
   resources :locations do
-    resources :projects, :only => [:index, :show]
+    resources :projects
   end
 
   root to: 'home#index'
