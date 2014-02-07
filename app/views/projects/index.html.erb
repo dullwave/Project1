@@ -1,4 +1,11 @@
 <h1>Boom.</h1>
-<% if !@projects.blank? %>
-   <pre><%= JSON.pretty_generate(@print_projects.parsedResponse) %></pre>
+<ul>
+<% @projects.each do |project| %>
+  <li>Project <%= project.name %></li>
 <% end %>
+</ul>
+<h3>dhfkdfkdf</h3>
+<h3>dhfkdfkdf</h3>
+<h3>dhfkdfkdf</h3>
+<h3>dhfkdfkdf</h3>
+<h3>dhfkdfkdf</h3>

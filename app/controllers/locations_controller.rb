@@ -7,10 +7,16 @@ class LocationsController < ApplicationController
     @location = Location.new
   end
 
+
   def create
     @location = Location.new(loc_params)
     if @location.save
-      redirect_to @location
+      results = Project.query_api(@location.box_coordinates)
+      results['projects'].each do |project|
+          @location.projects.create(name: project['project_title'], creator: project['owner_name'])
+      end
+      render :show
+      return
     else
       render :new
     end

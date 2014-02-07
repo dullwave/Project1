@@ -1,1 +1,10 @@
+<h2>Address: <%= @location.address %></h2>
+<h2>City: <%= @location.city %></h2>
+<h2>State: <%= @location.state %></h2>
+<h2>Zip: <%= @location.zip %></h2>
+<ul>
+<% @location.projects.each do |project| %>
+  <li>Project <%= project.name %></li>
+<% end %>
+</ul>
 

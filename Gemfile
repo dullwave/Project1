@@ -12,6 +12,9 @@ gem 'geocoder'
 gem 'httparty'
 gem 'annotate'
 group :development do
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
