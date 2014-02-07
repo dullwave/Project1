@@ -18,11 +18,11 @@ class Location < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
-  def self.full_address(address, city, state, zip)
+  def full_address
     [address, city, state, zip].compact.join(', ')
   end
 
-  def self.box_coordinates(latitude, longitude, distance=0.3)
+  def box_coordinates(distance=0.3)
     # Return hash of coordinates
     # Outside can be accessed by loc = Location(10, 10)
     #                            loc[:max_y]

@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
-
+  before_filter :authenticate_user!
   def index
-    @locations = Location.all
+    @users = User.all
   end
   def new
     @location = Location.new
@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(loc_params)
     if @location.save
-      redirect_to new_location_path
+      redirect_to location_projects_path
     else
       render :new
     end
@@ -19,7 +19,7 @@ class LocationsController < ApplicationController
   private
 
   def loc_params
-    params.require(:location).permit(:id, :address, :city, :state, :zip)
+    params.require(:location).permit(:id, :address, :city, :state, :zip, :latitude, :longitude)
   end
 end
 

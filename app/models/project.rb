@@ -16,6 +16,6 @@ class Project < ActiveRecord::Base
     # Return an array of Projects hopefully in the end
     query = "http://www.urbarama.com/api/project?sort=popular&offset=0&count=20&minx=#{coordinates[:min_x]}&miny=#{coordinates[:min_y]}&maxx=#{coordinates[:max_x]}&maxy=#{coordinates[:max_y]}&size=small&format=json"
     response = HTTParty.get(query)
-    JSON.parse(response.body)["projects"]
+    parsedResponse = JSON.parse(response.body.gsub("\\'", "'").gsub("\t", " "))["projects"]
   end
 end

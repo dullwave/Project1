@@ -1,2 +1,4 @@
 <h1>See something.</h1>
-<p><%= link_to 'Enter a new location',  new_location_path %></p>
+<% @users.each do |user| %>
+<p>Looks like you're near <%= user.current_sign_in_ip %>. Not right? <%= link_to 'Enter a new location',  new_location_path %>.</p>
+<% end %>
